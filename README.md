@@ -16,7 +16,6 @@ A user-friendly documentation website for the [Soroban Cookbook](https://github.
 ## 🎯 Planned Features
 
 - ✨ Interactive Code Playgrounds
-- 🔍 Smart Search (Algolia integration)
 - 🎯 Difficulty Badges
 - 💻 Live Rust code examples
 
@@ -56,7 +55,7 @@ Soroban_Cookbook_online/
 - **Language**: TypeScript + React 19
 - **Package Manager**: [Bun](https://bun.sh/)
 - **Deployment**: Vercel / GitHub Pages
-- **Search**: Algolia DocSearch (planned)
+- **Search**: [@easyops-cn/docusaurus-search-local](https://github.com/easyops-cn/docusaurus-search-local) (local, offline-capable)
 
 ## 📝 Development
 
@@ -217,7 +216,7 @@ We also have a [Pull Request Template](.github/pull_request_template.md) to help
 
 - [ ] Monaco Editor integration
 - [ ] Live code playground
-- [ ] Algolia DocSearch
+- [x] Local search (`@easyops-cn/docusaurus-search-local`) — offline-capable, no external API keys required
 - [ ] Custom React components
 
 ### Phase 4: Advanced Features
