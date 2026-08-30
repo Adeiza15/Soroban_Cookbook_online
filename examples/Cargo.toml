@@ -7,6 +7,7 @@ members = [
     "contract-factory",
     "counter",
     "emergency-stop",
+    "events-catalog",
     "error-handling",
     "escrow-basic",
     "escrow-multiparty",

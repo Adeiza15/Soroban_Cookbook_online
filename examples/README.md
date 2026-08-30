@@ -33,6 +33,7 @@ Contracts build to the shared workspace target directory,
 | [`counter`](counter/README.md) | Counter | [Storage](https://soroban-cookbook.dev/docs/concepts/storage) |
 | [`cross-contract`](cross-contract/README.md) | Cross-Contract Invocation Example | — |
 | [`emergency-stop`](emergency-stop/README.md) | Emergency Stop (Circuit Breaker) | [Lifecycle and Upgrades](https://soroban-cookbook.dev/docs/patterns/lifecycle-upgrades) |
+| [`events-catalog`](events-catalog/README.md) | Event Catalog for Indexers | [Events](https://soroban-cookbook.dev/docs/concepts/events) |
 | [`error-handling`](error-handling/README.md) | Error Handling | [Error Handling Pattern](https://soroban-cookbook.dev/docs/patterns/error-handling) |
 | [`escrow-basic`](escrow-basic/README.md) | Basic Escrow | [Basic Escrow Pattern](https://soroban-cookbook.dev/docs/patterns/escrow-basic) |
 | [`escrow-multiparty`](escrow-multiparty/README.md) | Multi-Party Escrow | [Multi-Party Escrow Pattern](https://soroban-cookbook.dev/docs/patterns/escrow-multiparty) |
