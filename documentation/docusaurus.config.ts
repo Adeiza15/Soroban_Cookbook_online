@@ -341,6 +341,47 @@ const config: Config = {
             from: '/docs/patterns/optimization',
             to: '/docs/patterns/optimization-playbook',
           },
+          // Overview-promised / historical pattern URLs (legacy paths without /docs)
+          {
+            from: '/patterns',
+            to: '/docs/patterns/overview',
+          },
+          {
+            from: '/patterns/overview',
+            to: '/docs/patterns/overview',
+          },
+          {
+            from: '/patterns/types',
+            to: '/docs/patterns/custom-types',
+          },
+          {
+            from: '/patterns/custom-types',
+            to: '/docs/patterns/custom-types',
+          },
+          {
+            from: '/patterns/auth',
+            to: '/docs/patterns/authorization',
+          },
+          {
+            from: '/patterns/authorization',
+            to: '/docs/patterns/authorization',
+          },
+          {
+            from: '/patterns/upgrades',
+            to: '/docs/patterns/lifecycle-upgrades',
+          },
+          {
+            from: '/patterns/lifecycle-upgrades',
+            to: '/docs/patterns/lifecycle-upgrades',
+          },
+          {
+            from: '/patterns/optimization',
+            to: '/docs/patterns/optimization-playbook',
+          },
+          {
+            from: '/patterns/optimization-playbook',
+            to: '/docs/patterns/optimization-playbook',
+          },
           // Contributing renames
           {
             from: '/docs/contributing/guide',
