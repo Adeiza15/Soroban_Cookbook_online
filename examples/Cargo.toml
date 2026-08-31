@@ -11,6 +11,7 @@ members = [
     "escrow-basic",
     "escrow-multiparty",
     "flash-loan",
+    "governor",
     "hello-world",
     "htlc-swap",
     "oracle-consumer",
