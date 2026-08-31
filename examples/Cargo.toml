@@ -35,6 +35,7 @@ members = [
     "sac-client",
     "token-vesting",
     "token-wrapper",
+    "twap-helper",
     "upgradeable",
     "multi-token-vault",
     "multisig-wallet",

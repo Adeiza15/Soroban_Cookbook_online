@@ -54,6 +54,7 @@ Contracts build to the shared workspace target directory,
 | [`token-transfer`](token-transfer/README.md) | Token Transfer with Allowance Mechanism | — |
 | [`token-vesting`](token-vesting/README.md) | Linear Token Vesting | [Timelock Vault Pattern](https://soroban-cookbook.dev/docs/patterns/timelock-vault) |
 | [`token-wrapper`](token-wrapper/README.md) | Token Wrapper with Transfer Fee | [Token Standards](https://soroban-cookbook.dev/docs/patterns/token-standards) |
+| [`twap-helper`](twap-helper/README.md) | Time-Weighted Average Price (TWAP) Helper | [Pattern Library](https://soroban-cookbook.dev/docs/patterns/overview) |
 | [`upgradeable`](upgradeable/README.md) | Upgradeable Contract | [Lifecycle and Upgrades](https://soroban-cookbook.dev/docs/patterns/lifecycle-upgrades) |
 
 ## Adding an example
