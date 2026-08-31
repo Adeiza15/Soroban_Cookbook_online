@@ -115,6 +115,14 @@ See the tested `['upgradeable'`](https://github.com/Soroban-Cookbook/Soroban_Coo
 
 For high-security upgrades, also consider combining multisig and timelock: all required signers must approve, and execution is only possible after a delay. See the tested `['multisig-timelock-upgrade'`](https://github.com/Soroban-Cookbook/Soroban_Cookbook_online/tree/main/examples/multisig-timelock-upgrade) for a complete flow with tests for both gates.
 
+### Example File Map
+
+- `examples/upgradeable/src/lib.rs` — contract with `upgrade` gated by `admin.require_auth()` (matches the integration tests).
+- `examples/upgradeable/v2` — the upgraded contract used in the upgrade tests; CI builds `v2` first to produce the target Wasm.
+- `examples/upgradeable/tests/test_upgrade.rs` — contains `test_upgrade_requires_admin_auth` and state-preservation tests.
+
+The upgrade test flow installs the `v2` Wasm hash, invokes `upgrade` as the admin, then verifies the contract ID and storage are preserved while the code hash matches the `v2` build.
+
 ---
 
 ## State Migration Patterns
