@@ -132,6 +132,17 @@
     "href": "/docs/concepts/gas-and-resources"
   },
   {
+    "id": "concepts/simulation-and-footprints",
+    "title": "Simulation and Footprints",
+    "description": "Understand transaction preflight simulation, ledger footprints (read-only and read-write), authorization modes, and why simulations can succeed while on-chain invocations fail.",
+    "category": "concepts",
+    "difficulty": "intermediate",
+    "status": "stable",
+    "time": 10,
+    "tags": ["auth", "storage", "events", "optimization", "errors"],
+    "href": "/docs/concepts/simulation-and-footprints"
+  },
+  {
     "id": "concepts/introduction",
     "title": "What is Soroban?",
     "description": "Learn what Soroban is — Stellars smart contract platform built for speed, scalability, and developer experience with Rust.",
