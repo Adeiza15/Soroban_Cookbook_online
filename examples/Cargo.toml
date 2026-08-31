@@ -23,6 +23,7 @@ members = [
     "timelock-vault",
     "token-snapshot",
     "token-transfer",
+    "sac-client",
     "token-vesting",
     "token-wrapper",
     "upgradeable",
