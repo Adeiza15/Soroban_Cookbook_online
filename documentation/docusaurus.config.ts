@@ -43,7 +43,24 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'es', 'pt-BR'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en',
+      },
+      es: {
+        label: 'Español',
+        direction: 'ltr',
+        htmlLang: 'es',
+      },
+      'pt-BR': {
+        label: 'Português (Brasil)',
+        direction: 'ltr',
+        htmlLang: 'pt-BR',
+      },
+    },
   },
 
   // Theme initialization script to prevent flash of incorrect theme
@@ -177,7 +194,7 @@ const config: Config = {
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
-        language: ['en'],
+        language: ['en', 'es', 'pt'],
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
         indexDocs: true,
@@ -477,6 +494,10 @@ const config: Config = {
         },
         {
           type: 'docsVersionDropdown',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
           position: 'right',
         },
         {
