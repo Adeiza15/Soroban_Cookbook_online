@@ -7,6 +7,7 @@
  * - Issue #358: search analytics
  * - Issue #352: privacy / GDPR consent gating for non-essential beacons
  * - Issue #313: site-wide keyboard shortcuts (navigation, search, actions)
+ *   (rendered from the swizzled Layout so it runs inside the theme providers)
  *
  * This component wraps the entire Docusaurus app. We use it to initialise
  * Sentry and Web Vitals on the client side, and to mount the site-wide
@@ -36,7 +37,7 @@
  */
 
 import React, { useEffect, type ReactNode } from 'react';
-import ConsentBanner from '@site/src/components/ConsentBanner';
+import CookieConsent from '@site/src/components/CookieConsent';
 import FunnelTracker from '@site/src/components/FunnelTracker';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import KeyboardShortcuts from '@site/src/components/KeyboardShortcuts';
