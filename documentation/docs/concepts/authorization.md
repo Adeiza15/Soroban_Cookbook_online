@@ -5,12 +5,6 @@ description: Implement secure authorization patterns in Soroban contracts — id
 ---
 
 # Authorization
-
-title: Authorization
-description: Access control patterns for Soroban smart contracts.
-sidebar_position: 5
----
-
 Authorization in Soroban ensures only expected identities can execute sensitive contract actions.
 
 ## Typical Access Patterns
@@ -34,11 +28,11 @@ Authorization in Soroban ensures only expected identities can execute sensitive 
 
 ## Related Examples
 
-The [`examples/multisig-wallet/`](https://github.com/Soroban-Cookbook/Soroban_Cookbook_online/tree/main/examples/multisig-wallet) example demonstrates M-of-N authorization, where a configurable threshold of signers must approve a transaction before it can be executed.
+The [multisig-wallet pattern](/docs/patterns/multisig-wallet) demonstrates M-of-N authorization, where a configurable threshold of signers must approve a transaction before it can be executed. See the [source code](https://github.com/Soroban-Cookbook/Soroban_Cookbook_online/tree/main/examples/multisig-wallet) for implementation details.
 
 ## Next
 
 - [Security Fundamentals](../security/fundamentals.md)
 - [Token Pattern Security Audit](../security/token-audit.md)
-- [Storage Patterns](./storage.md)
+- [Storage Patterns)](./storage.md)
 - [Events](./events.md)
