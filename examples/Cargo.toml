@@ -30,6 +30,7 @@ members = [
     "staking",
     "stream-payment",
     "timelock-vault",
+    "tiny-contract",
     "token-snapshot",
     "token-transfer",
     "sac-client",

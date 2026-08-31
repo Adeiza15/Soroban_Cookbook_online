@@ -50,6 +50,7 @@ Contracts build to the shared workspace target directory,
 | [`simple-voting`](simple-voting/README.md) | Simple Voting | [Proposal Lifecycle](https://soroban-cookbook.dev/docs/patterns/proposal-lifecycle) |
 | [`staking`](staking/README.md) | Staking with Epoch Rewards | [Staking Pattern](https://soroban-cookbook.dev/docs/patterns/staking) |
 | [`timelock-vault`](timelock-vault/README.md) | Timelock Vault | [Timelock Vault Pattern](https://soroban-cookbook.dev/docs/patterns/timelock-vault) |
+| [`tiny-contract`](tiny-contract/README.md) | Tiny contract for WASM size benchmarking | [Optimization Playbook](https://soroban-cookbook.dev/docs/patterns/optimization-playbook) |
 | [`token-snapshot`](token-snapshot/README.md) | Token Snapshot | [Token Snapshot Pattern](https://soroban-cookbook.dev/docs/patterns/token-snapshot) |
 | [`token-transfer`](token-transfer/README.md) | Token Transfer with Allowance Mechanism | — |
 | [`token-vesting`](token-vesting/README.md) | Linear Token Vesting | [Timelock Vault Pattern](https://soroban-cookbook.dev/docs/patterns/timelock-vault) |
