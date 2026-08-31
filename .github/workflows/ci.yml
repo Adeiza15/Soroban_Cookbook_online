@@ -389,10 +389,79 @@ jobs:
           path: documentation/playwright-report
           retention-days: 7
 
+  coverage:
+    name: Unit Test Coverage
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./documentation
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.2.0"
+
+      - name: Cache Bun dependencies
+        uses: actions/cache@v6
+        with:
+          path: ~/.bun/install/cache
+          key: bun-${{ hashFiles('documentation/bun.lock') }}
+          restore-keys: |
+            bun-
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Run tests with coverage
+        # Thresholds are enforced by vitest.config.ts (global + per-file).
+        # The job fails if any threshold is breached.
+        run: bun run test:coverage
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: coverage-report
+          path: |
+            documentation/coverage/coverage-summary.json
+            documentation/coverage/index.html
+          retention-days: 14
+
+      - name: Post coverage summary to job
+        if: always()
+        run: |
+          SUMMARY=coverage/coverage-summary.json
+          if [ ! -f "$SUMMARY" ]; then
+            echo "⚠️  Coverage summary not found — tests may have failed before report generation."
+            exit 0
+          fi
+          LINES=$(node -e "const d=require('./$SUMMARY');console.log(d.total.lines.pct+'%')")
+          STMTS=$(node -e "const d=require('./$SUMMARY');console.log(d.total.statements.pct+'%')")
+          FUNCS=$(node -e "const d=require('./$SUMMARY');console.log(d.total.functions.pct+'%')")
+          BRNCH=$(node -e "const d=require('./$SUMMARY');console.log(d.total.branches.pct+'%')")
+          echo "### 📊 Coverage Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Metric | Coverage | Threshold |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|--------|----------|-----------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Lines | $LINES | 26% |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Statements | $STMTS | 26% |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Functions | $FUNCS | 27% |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Branches | $BRNCH | 30% |" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "_Full HTML report available in the \`coverage-report\` artifact._" >> "$GITHUB_STEP_SUMMARY"
+
   summary:
     name: CI Summary
     runs-on: ubuntu-latest
-    needs: [lint-format, spellcheck, typecheck, build-docs, validate-deployment, test-examples, lint-contracts, e2e-console, e2e-smoke]
+    needs: [lint-format, spellcheck, typecheck, build-docs, validate-deployment, test-examples, lint-contracts, e2e-console, e2e-smoke, coverage]
     if: always()
     steps:
       - name: Check job statuses
@@ -431,5 +500,9 @@ jobs:
           fi
           if [ "${{ needs.test-examples.result }}" != "success" ]; then
             echo "⚠️  Code example tests failed (non-blocking)"
+          fi
+          if [ "${{ needs.coverage.result }}" != "success" ]; then
+            echo "❌ Coverage check failed (thresholds not met)"
+            exit 1
           fi
           echo "✅ All critical CI checks passed"
