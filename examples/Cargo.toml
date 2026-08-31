@@ -13,6 +13,7 @@ members = [
     "error-handling",
     "escrow-basic",
     "escrow-multiparty",
+    "faucet",
     "flash-loan",
     "governor",
     "hello-world",
