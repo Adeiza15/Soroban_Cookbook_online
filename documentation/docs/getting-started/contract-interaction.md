@@ -270,6 +270,7 @@ const response = await fetch('/api/contract/invoke', {
 
 ## Related resources
 
+- [Wallet integration guide](/docs/getting-started/wallets) — connect Freighter and sign transactions from a dapp
 - [Pattern Library](/docs/patterns/overview) — reusable contract patterns
 - [Deploy to testnet](/docs/getting-started/deploy-testnet)
 - [First contract tutorial](/docs/getting-started/first-contract)
