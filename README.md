@@ -12,12 +12,13 @@ A user-friendly documentation website for the [Soroban Cookbook](https://github.
 - 🎨 **Beautiful UI** - Modern design with dark mode support
 - 📱 **Fully Responsive** - Works perfectly on all devices
 - ⚡ **Fast Performance** - Built with Docusaurus for optimal speed
+- 🎯 **Difficulty Badges** - Patterns include difficulty badges (beginner, intermediate, advanced)
+- 💻 **Rust code examples** - Patterns provide Rust contract implementations with tests
 
 ## 🎯 Planned Features
 
 - ✨ Interactive Code Playgrounds
-- 🎯 Difficulty Badges
-- 💻 Live Rust code examples
+- 🔍 Smart Search
 
 ## 🚀 Quick Start
 
@@ -55,7 +56,7 @@ Soroban_Cookbook_online/
 - **Language**: TypeScript + React 19
 - **Package Manager**: [Bun](https://bun.sh/)
 - **Deployment**: Vercel / GitHub Pages
-- **Search**: [@easyops-cn/docusaurus-search-local](https://github.com/easyops-cn/docusaurus-search-local) (local, offline-capable)
+- **Search**: Local search (via `docusaurus-plugin-search-local`)
 
 ## 📝 Development
 
@@ -260,6 +261,8 @@ npm run typecheck
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) for details.
+
+The example code in `examples/` is also covered by the MIT license. If any examples were adapted from external sources, appropriate attribution would be provided.
 
 ## 🌟 Acknowledgments
 
