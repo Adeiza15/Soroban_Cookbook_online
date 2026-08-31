@@ -77,6 +77,7 @@ const sidebars: SidebarsConfig = {
         'patterns/proposal-lifecycle',
         'patterns/reentrancy-guard',
         'patterns/streaming-payments',
+        'patterns/token-vesting',
         'patterns/contract-registry',
       ],
     },
