@@ -10,7 +10,7 @@ Reusable smart contract patterns for common use cases.
 
 ## Template example
 
-The **[Hello World storage](/docs/patterns/hello-world)** pattern demonstrates the standard pattern page layout (metadata, prerequisites, implementation with code tabs, security, and related links). Copy its structure when adding new patterns.
+The [**Hello World storage*] (/docs/patterns/hello-world) pattern demonstrates the standard pattern page layout (metadata, prerequisites, implementation with code tabs, security, and related links). Copy its structure when adding new patterns.
 
 ## Available Patterns
 
@@ -46,9 +46,16 @@ Comprehensive error handling patterns including Result types, fallback logic, gr
 
 Token staking with pro-rata reward distribution over epocs. Demonstrates lazy reward computation, epoch-based accounting, and efficient O(1) per-user storage without batch operations.
 
+### [HTLC Atomic Swap](/docs/patterns/htlc-swap)
+
+<span class="sb-badge sb-badge--intermediate">Intermediate</span> <span class="sb-tag sb-tag--defi">DeFi</span> <span class="sb-badge sb-badge--stable">Stable</span>
+
+Hash-time-locked contract for cross-party atomic swaps. Demonstrates hashlock, timelock, and refund mechanisms for trustless exchanges.
+
 ## Pattern Categories
 
 ### 🔺 [Token Standards](/patterns/tokens)
+### 🦩 [Token Standards](/patterns/tokens)
 
 <span class="sb-tag sb-tag--token">Token</span>
 
@@ -65,11 +72,12 @@ Explore fungible token standards, wrappers, and vault mechanisms for building ro
 Build decentralized finance applications with liquidity pools, staking, atomic swaps, and lending protocols.
 
 - Liquidity pools (AMM)
-- **Staking contracts** with epoch-based rewards
-- Atomic swaps
+- **Staking contracts**with epoch-based rewards
+- [Atomic swaps (HTLC)](/docs/patterns/htlc-swap)
 - Lending and borrowing
 
 ### 🌷 Governance](/patterns/governance)
+### 🗳 [Governance](/patterns/governance)
 
 <span class="sb-tag sb-tag--governance">Governance</span>
 
@@ -81,6 +89,11 @@ Implement decentralized governance with voting systems, DAOs, and proposal mecha
 - Token delegation
 
 ### 🎈️ [NFT Patterns](/patterns/nft)
+- DO implementations
+- Proposal factories
+- Token delegation
+
+### 🚀 [NFT Patterns](/patterns/nft)
 
 <span class="sb-tag sb-tag--nft">NFT</span>
 
@@ -92,6 +105,7 @@ Create and manage non-fungible tokens with marketplaces and collection systems.
 - Royalty mechanisms
 
 ### 🔤 Utility & Infrastructure
+### 🤥 [Utility & Infrastructure](/patterns/utility)
 
 <span class="sb-badge sb-badge--intermediate">Intermediate</span>
 
@@ -103,6 +117,7 @@ Build essential utility contracts for multi-signature wallets, escrow, and fund 
 - Registry systems
 
 ### ✨ Advanced Patterns
+### ⚣ Advanced Patterns
 
 <span class="sb-badge sb-badge--advanced">Advanced</span>
 
