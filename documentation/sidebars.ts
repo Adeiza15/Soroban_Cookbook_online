@@ -75,6 +75,7 @@ const sidebars: SidebarsConfig = {
         'patterns/optimization-playbook',
         'patterns/lifecycle-upgrades',
         'patterns/proposal-lifecycle',
+        'patterns/simple-dao',
         'patterns/reentrancy-guard',
         'patterns/streaming-payments',
         'patterns/contract-registry',
