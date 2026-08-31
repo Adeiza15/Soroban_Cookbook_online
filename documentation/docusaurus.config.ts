@@ -300,6 +300,10 @@ const config: Config = {
             to: '/docs/getting-started/deploy-testnet',
           },
           {
+            from: '/docs/getting-started/local-testing',
+            to: '/docs/getting-started/local-testing-and-simulation',
+          },
+          {
             from: '/docs/getting-started/interaction',
             to: '/docs/getting-started/contract-interaction',
           },
