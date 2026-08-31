@@ -590,6 +590,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "auth",
       "events",
@@ -623,6 +624,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "optimization",
       "errors",
@@ -638,6 +640,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "optimization",
       "errors",
@@ -653,6 +656,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 25,
     "tags": [
       "auth",
       "errors",
@@ -668,6 +672,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 25,
     "tags": [
       "auth",
       "storage",
@@ -685,6 +690,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 30,
     "tags": [
       "auth",
       "storage",
@@ -704,6 +710,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "auth",
       "events",
@@ -721,6 +728,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 15,
     "tags": [
       "auth",
       "storage",
@@ -738,6 +746,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 15,
     "tags": [
       "storage"
     ],
@@ -751,6 +760,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 25,
     "tags": [
       "auth",
       "storage",
@@ -773,6 +783,13 @@
       "storage",
       "optimization"
     ],
+    "title": "Local Testing and Simulation",
+    "description": "This page has moved to the canonical local testing guide and redirects to the shared simulation workflow.",
+    "category": "getting-started",
+    "difficulty": "beginner",
+    "status": "stable",
+    "time": 15,
+    "tags": [],
     "href": "/docs/getting-started/local-testing"
   },
   {
@@ -783,6 +800,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "auth",
       "errors",
@@ -798,6 +816,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 25,
     "tags": [
       "auth",
       "errors"
@@ -812,6 +831,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 30,
     "tags": [
       "auth",
       "storage",
@@ -829,6 +849,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 5,
     "tags": [
       "auth"
     ],
@@ -842,6 +863,7 @@
     "difficulty": "beginner",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "auth",
       "storage",
@@ -897,6 +919,7 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "time": 25,
     "tags": [
       "auth",
       "storage",
@@ -914,6 +937,7 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "auth",
       "storage",
@@ -931,6 +955,7 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "",
       "auth",
@@ -949,6 +974,12 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "title": "Contract Registry",
+    "description": "Map stable byte names to contract addresses with administrative authorization",
+    "category": "patterns",
+    "difficulty": "intermediate",
+    "status": "stable",
+    "time": 20,
     "tags": [
       "",
       "auth",
@@ -968,6 +999,7 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "time": 25,
     "tags": [
       "auth",
       "storage",
@@ -987,6 +1019,7 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "auth",
       "storage",
@@ -1005,6 +1038,7 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "auth",
       "storage",
@@ -1094,6 +1128,11 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "description": "A single vault contract that holds accounting balances for multiple different tokens simultaneously.",
+    "category": "patterns",
+    "difficulty": "intermediate",
+    "status": "stable",
+    "time": 25,
     "tags": [
       "storage",
       "tokens",
@@ -1112,6 +1151,7 @@
     "difficulty": "advanced",
     "status": "stable",
     "time": 10,
+    "time": 25,
     "tags": [
       "storage",
       "events",
@@ -1128,6 +1168,7 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "events",
       "auth",
@@ -1164,6 +1205,7 @@
     "difficulty": "advanced",
     "status": "stable",
     "time": 10,
+    "time": 25,
     "tags": [
       "auth",
       "storage",
@@ -1210,6 +1252,11 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "description": "Linear token streaming with continuous accrual and withdrawable balance",
+    "category": "patterns",
+    "difficulty": "intermediate",
+    "status": "stable",
+    "time": 25,
     "tags": [
       "",
       "auth",
@@ -1228,6 +1275,7 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "time": 20,
     "tags": [
       "storage",
       "auth",
@@ -1245,6 +1293,7 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "time": 25,
     "tags": [
       "auth",
       "storage",
@@ -1264,6 +1313,7 @@
     "difficulty": "intermediate",
     "status": "stable",
     "time": 10,
+    "time": 30,
     "tags": [
       "auth",
       "storage",
@@ -1326,6 +1376,7 @@
   {
     "id": "security/contract-auth-audit",
     "title": "Contract `require_auth` Audit",
+    "title": "Contract require_auth Audit",
     "description": "Per-method require_auth audit of all Soroban Cookbook example contracts (Phase 8 #638).",
     "category": "security",
     "difficulty": "beginner",
