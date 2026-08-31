@@ -50,6 +50,7 @@ const sidebars: SidebarsConfig = {
         'concepts/error-handling',
         'concepts/storage',
         'concepts/authorization',
+        'concepts/authorization-trees',
         'concepts/events',
         'concepts/time-and-scheduling',
         'concepts/gas-and-resources',
