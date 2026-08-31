@@ -281,6 +281,22 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Check example formatting (rustfmt.toml)
+        # Uses the shared config at examples/rustfmt.toml (edition 2021) so local
+        # `cargo fmt` output and CI match. Requires every workspace member to be
+        # formatted identically.
+        run: cargo fmt --manifest-path examples/Cargo.toml --all -- --check
+
+      - name: Lint example libs (clippy.toml)
+        # Loads the shared thresholds from examples/clippy.toml. Scoped to --lib
+        # so pre-existing test-only compile issues don't block the style gate.
+        run: cargo clippy --manifest-path examples/Cargo.toml --workspace --lib
+
       - name: Forbid new unwrap/expect outside #[cfg(test)]
         run: bash scripts/forbid-unwrap.sh
 

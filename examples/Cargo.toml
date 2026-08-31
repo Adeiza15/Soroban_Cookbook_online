@@ -5,6 +5,7 @@ members = [
     "balance-snapshot",
     "batch-ops",
     "constant-product-amm",
+    "cross-contract",
     "constructor-init",
     "contract-factory",
     "counter",
