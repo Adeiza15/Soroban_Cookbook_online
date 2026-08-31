@@ -36,8 +36,13 @@ Authorization in Soroban ensures only expected identities can execute sensitive 
 
 The [`examples/multisig-wallet/`](https://github.com/Soroban-Cookbook/Soroban_Cookbook_online/tree/main/examples/multisig-wallet) example demonstrates M-of-N authorization, where a configurable threshold of signers must approve a transaction before it can be executed.
 
+## Nested Calls and Authorization Trees
+
+When your contract calls another contract that calls `require_auth` (for example, a vault calling a token's `transfer`), Soroban verifies the *entire* signed call chain — the root invocation plus every nested `sub_invocation` — not just a single signature. This is the [Authorization Trees and Sub-Invocations](./authorization-trees.md) concept: exact arguments, exact call paths, and `Error(Auth, InvalidAction)` when anything mismatches. See that page for the two-level walkthrough, `mock_auths` / `mock_all_auths` testing patterns, and debugging guidance.
+
 ## Next
 
+- [Authorization Trees and Sub-Invocations](./authorization-trees.md) — how authorization propagates across nested cross-contract calls
 - [Security Fundamentals](../security/fundamentals.md)
 - [Token Pattern Security Audit](../security/token-audit.md)
 - [Storage Patterns](./storage.md)
