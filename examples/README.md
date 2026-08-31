@@ -29,6 +29,7 @@ Contracts build to the shared workspace target directory,
 | [`balance-snapshot`](balance-snapshot/README.md) | Balance Snapshots | [Token Snapshot Pattern](https://soroban-cookbook.dev/docs/patterns/token-snapshot) |
 | [`batch-ops`](batch-ops/README.md) | Batched Operations | [Gas and Resources](https://soroban-cookbook.dev/docs/concepts/gas-and-resources) |
 | [`constant-product-amm`](constant-product-amm/README.md) | Constant-Product AMM | [Pattern Library](https://soroban-cookbook.dev/docs/patterns/overview) |
+| [`constructor-init`](constructor-init/README.md) | Constructor args vs delayed initialize | [First Contract](https://soroban-cookbook.dev/docs/getting-started/first-contract) |
 | [`contract-factory`](contract-factory/README.md) | Contract Factory | [Contract Factory Pattern](https://soroban-cookbook.dev/docs/patterns/contract-factory) |
 | [`counter`](counter/README.md) | Counter | [Storage](https://soroban-cookbook.dev/docs/concepts/storage) |
 | [`cross-contract`](cross-contract/README.md) | Cross-Contract Invocation Example | — |
