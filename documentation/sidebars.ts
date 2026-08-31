@@ -1,5 +1,4 @@
-import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
-
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs'; 
 /**
  * Soroban Cookbook Sidebar Configuration
  * Creating a structured learning path for Soroban development
