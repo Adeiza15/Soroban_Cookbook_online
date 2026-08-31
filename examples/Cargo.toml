@@ -16,6 +16,7 @@ members = [
     "htlc-swap",
     "oracle-consumer",
     "reentrancy-guard",
+    "refundable-deposit",
     "registry",
     "simple-dao",
     "simple-voting",

@@ -43,6 +43,7 @@ Contracts build to the shared workspace target directory,
 | [`multisig-wallet`](multisig-wallet/README.md) | Multisig Wallet | [Authorization](https://soroban-cookbook.dev/docs/concepts/authorization) |
 | [`oracle-consumer`](oracle-consumer/README.md) | Oracle Consumer | [Oracle Consumer Pattern](https://soroban-cookbook.dev/docs/patterns/oracle-consumer) |
 | [`reentrancy-guard`](reentrancy-guard/README.md) | Reentrancy Guard | [Reentrancy Guard Pattern](https://soroban-cookbook.dev/docs/patterns/reentrancy-guard) |
+| [`refundable-deposit`](refundable-deposit/README.md) | Refundable Deposit | [Authorization Patterns](https://soroban-cookbook.dev/docs/patterns/authorization) |
 | [`simple-dao`](simple-dao/README.md) | Simple DAO | [Proposal Lifecycle](https://soroban-cookbook.dev/docs/patterns/proposal-lifecycle) |
 | [`simple-voting`](simple-voting/README.md) | Simple Voting | [Proposal Lifecycle](https://soroban-cookbook.dev/docs/patterns/proposal-lifecycle) |
 | [`staking`](staking/README.md) | Staking with Epoch Rewards | [Staking Pattern](https://soroban-cookbook.dev/docs/patterns/staking) |
