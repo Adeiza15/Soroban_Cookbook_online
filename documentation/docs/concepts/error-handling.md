@@ -181,7 +181,7 @@ pub fn public_operation(env: Env) -> Result<(), Error> {
 
 ## Error Testing
 
-Always test error conditions. See the [`examples/error-handling`](../examples/error-handling) crate for runnable examples.
+Always test error conditions. See the [Error Handling pattern](/docs/patterns/error-handling) for runnable examples.
 
 ```rust
 #[test]

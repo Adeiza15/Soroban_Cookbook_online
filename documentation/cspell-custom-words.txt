@@ -72,6 +72,13 @@ HPJVIEUVNIXF
 HSTS
 HTLC
 incentivized
+incentivizes
+unstake
+toggleable
+wasmi
+bindgen
+funder
+AAAAAQAAAA
 initialise
 initialised
 Initialised
