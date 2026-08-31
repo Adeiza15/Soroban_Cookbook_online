@@ -21,6 +21,7 @@ members = [
     "htlc-swap",
     "lending",
     "oracle-consumer",
+    "rate-limit",
     "reentrancy-guard",
     "refundable-deposit",
     "registry",
