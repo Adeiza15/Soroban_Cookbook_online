@@ -23,6 +23,10 @@ Understanding these core concepts will help you build robust and efficient Sorob
 
 Learn how to persist data in your contracts using Soroban's storage system.
 
+### [Storage TTL & State Archival](/docs/concepts/storage-ttl)
+
+Manage entry lifetimes, extend TTLs, and understand state archival costs.
+
 ### [Authorization & Access Control](/docs/concepts/authorization)
 
 Implement secure authentication and authorization patterns.
