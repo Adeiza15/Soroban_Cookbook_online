@@ -327,7 +327,7 @@ jobs:
           CI: true
 
   e2e-smoke:
-    name: Playwright Smoke Tests (Chromium)
+    name: Playwright Core Tests (Chromium)
     runs-on: ubuntu-latest
     needs: [build-docs]
     defaults:
@@ -372,11 +372,10 @@ jobs:
           bun run serve --port 3000 &
           npx wait-on http://localhost:3000 --timeout 60000
 
-      - name: Run smoke tests (Chromium)
-        # Keep this job scoped to smoke.spec.ts — a11y/search suites are covered
-        # separately (or follow-ups). Running the full Chromium project here pulls
-        # in contrast/search failures unrelated to basic smoke coverage.
-        run: npx playwright test e2e/smoke.spec.ts --project=chromium
+      - name: Run core tests (Chromium)
+        # Keep this job scoped to smoke.spec.ts, accessibility.spec.ts, and navigation.spec.ts
+        # Other suites are run nightly/on main to reduce PR CI times.
+        run: npx playwright test e2e/smoke.spec.ts e2e/accessibility.spec.ts e2e/navigation.spec.ts --project=chromium
         env:
           E2E_BASE_URL: http://localhost:3000
           CI: "true"
@@ -422,7 +421,7 @@ jobs:
             exit 1
           fi
           if [ "${{ needs.e2e-smoke.result }}" != "success" ]; then
-            echo "❌ Playwright smoke tests failed"
+            echo "❌ Playwright core tests (smoke, a11y, navigation) failed"
             exit 1
           fi
           if [ "${{ needs.lint-contracts.result }}" != "success" ]; then
