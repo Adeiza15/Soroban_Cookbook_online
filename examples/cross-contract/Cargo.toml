@@ -2,6 +2,8 @@
 name = "cross-contract"
 version = "0.0.0"
 edition = "2021"
+description = "Soroban example demonstrating cross-contract invocations between a token and a vault."
+keywords = ["soroban", "example", "cross-contract"]
 publish = false
 
 [lib]
