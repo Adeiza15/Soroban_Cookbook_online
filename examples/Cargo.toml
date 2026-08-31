@@ -28,5 +28,7 @@ members = [
     "upgradeable",
     "multi-token-vault",
     "multisig-wallet",
+    "marketplace",
 ]
+resolver = "2"
 resolver = "2"
