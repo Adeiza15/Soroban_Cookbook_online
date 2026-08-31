@@ -39,6 +39,8 @@
 import React, { useEffect, type ReactNode } from 'react';
 import CookieConsent from '@site/src/components/CookieConsent';
 import FunnelTracker from '@site/src/components/FunnelTracker';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import KeyboardShortcuts from '@site/src/components/KeyboardShortcuts';
 import OfflineNotice from '@site/src/components/OfflineNotice';
 import SearchAnalytics from '@site/src/components/SearchAnalytics';
 import SearchLoading from '@site/src/components/SearchLoading';
@@ -150,6 +152,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
       <SearchAnalytics />
       <SearchLoading />
       <ConsentBanner />
+      <BrowserOnly>{() => <KeyboardShortcuts />}</BrowserOnly>
     </ProgressProvider>
   );
 }

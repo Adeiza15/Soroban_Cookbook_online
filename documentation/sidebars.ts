@@ -49,6 +49,7 @@ const sidebars: SidebarsConfig = {
         'concepts/best-practices',
         'concepts/error-handling',
         'concepts/storage',
+        'concepts/storage-ttl',
         'concepts/constructors',
         'concepts/authorization',
         'concepts/authorization-trees',

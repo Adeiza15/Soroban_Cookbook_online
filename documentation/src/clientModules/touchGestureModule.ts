@@ -46,6 +46,9 @@ const SWIPE_VELOCITY_THRESHOLD = 0.3;
  */
 const EDGE_SWIPE_ZONE = 30;
 
+/** Desktop breakpoint — must match mobile-menu.css `@media (max-width: 996px)`. */
+const _MOBILE_BREAKPOINT = 997;
+
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 /**
