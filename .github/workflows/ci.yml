@@ -265,11 +265,9 @@ jobs:
 
       - name: Check every example crate has a README
         run: bash scripts/check-example-readmes.sh
-        continue-on-error: true
 
       - name: Run example tests
         run: bash scripts/test-examples.sh
-        continue-on-error: true
 
   lint-contracts:
     name: Lint Contract Code
@@ -430,6 +428,7 @@ jobs:
             exit 1
           fi
           if [ "${{ needs.test-examples.result }}" != "success" ]; then
-            echo "⚠️  Code example tests failed (non-blocking)"
+            echo "❌ Code example tests failed"
+            exit 1
           fi
           echo "✅ All critical CI checks passed"
