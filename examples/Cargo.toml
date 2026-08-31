@@ -4,6 +4,7 @@ members = [
     "authorization",
     "balance-snapshot",
     "constant-product-amm",
+    "constructor-init",
     "contract-factory",
     "counter",
     "emergency-stop",
