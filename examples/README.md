@@ -39,6 +39,7 @@ Contracts build to the shared workspace target directory,
 | [`flash-loan`](flash-loan/README.md) | Flash Loan | [Pattern Library](https://soroban-cookbook.dev/docs/patterns/overview) |
 | [`hello-world`](hello-world/README.md) | Hello World | [Hello World Pattern](https://soroban-cookbook.dev/docs/patterns/hello-world) |
 | [`htlc-swap`](htlc-swap/README.md) | Hashed Timelock Contract (HTLC) Swap | [Pattern Library](https://soroban-cookbook.dev/docs/patterns/overview) |
+| [`lending`](lending/README.md) | Collateralized Lending (LTV, oracle freshness, liquidation) | [DeFi Security Patterns](https://soroban-cookbook.dev/docs/security/defi-patterns) |
 | [`multisig-wallet`](multisig-wallet/README.md) | Multisig Wallet | [Authorization](https://soroban-cookbook.dev/docs/concepts/authorization) |
 | [`oracle-consumer`](oracle-consumer/README.md) | Oracle Consumer | [Oracle Consumer Pattern](https://soroban-cookbook.dev/docs/patterns/oracle-consumer) |
 | [`reentrancy-guard`](reentrancy-guard/README.md) | Reentrancy Guard | [Reentrancy Guard Pattern](https://soroban-cookbook.dev/docs/patterns/reentrancy-guard) |
