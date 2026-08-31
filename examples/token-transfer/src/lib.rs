@@ -14,6 +14,13 @@ pub enum DataKey {
     Decimals,
 }
 
+#[contracttype]
+#[derive(Clone)]
+pub struct AllowanceData {
+    pub amount: i128,
+    pub expiration: u64,
+}
+
 #[contracterror]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 #[repr(u32)]
@@ -140,6 +147,8 @@ impl TokenTransfer {
 
         let key = DataKey::Allowance(owner.clone(), spender.clone());
         env.storage().persistent().set(&key, &amount);
+        let key = DataKey::Allowance(owner, spender);
+        env.storage().persistent().set(&key, &AllowanceData { amount, expiration: u64::MAX });
 
         env.events()
             .publish((symbol_short!("approve"), owner, spender), amount);
@@ -147,10 +156,36 @@ impl TokenTransfer {
         Ok(())
     }
 
+    /// Approve another address to spend tokens on behalf of the caller until a given expiration time.
+    pub fn approve_with_expiration(
+        env: Env,
+        owner: Address,
+        spender: Address,
+        amount: i128,
+        expiration: u64,
+    ) -> Result<(), Error> {
+        owner.require_auth();
+
+        if amount < 0 {
+            return Err(Error::InvalidAmount);
+        }
+
+        let key = DataKey::Allowance(owner, spender);
+        env.storage().persistent().set(&key, &AllowanceData { amount, expiration });
+
+        env.events().publish(
+            (symbol_short!("approve"), owner.clone(), spender.clone()),
+            (amount, expiration),
+        );
+
+        Ok(())
+    }
+
     /// Get the allowance that spender can spend on behalf of owner.
     pub fn allowance(env: Env, owner: Address, spender: Address) -> i128 {
         let key = DataKey::Allowance(owner, spender);
-        env.storage().persistent().get(&key).unwrap_or(0)
+        let allowance_data: AllowanceData = env.storage().persistent().get(&key).unwrap_or(AllowanceData { amount: 0, expiration: 0 });
+        allowance_data.amount
     }
 
     /// Return the balance of an address.
@@ -215,7 +250,17 @@ impl TokenTransfer {
 
         // Check allowance
         let allowance_key = DataKey::Allowance(from.clone(), spender.clone());
-        let current_allowance: i128 = env.storage().persistent().get(&allowance_key).unwrap_or(0);
+        let allowance_data: AllowanceData = env.storage()
+            .persistent()
+            .get(&allowance_key)
+            .unwrap_or(AllowanceData { amount: 0, expiration: 0 });
+        let current_allowance = allowance_data.amount;
+        let expiration = allowance_data.expiration;
+
+        // Ensure allowance is not expired
+        if expiration != 0 && env.ledger().timestamp() >= expiration {
+            return Err(Error::InsufficientAllowance);
+        }
 
         if current_allowance < amount {
             return Err(Error::InsufficientAllowance);
@@ -232,7 +277,7 @@ impl TokenTransfer {
         // Update allowance
         env.storage()
             .persistent()
-            .set(&allowance_key, &(current_allowance - amount));
+            .set(&allowance_key, &AllowanceData { amount: current_allowance - amount, expiration });
 
         // Update balances
         let to_key = DataKey::Balance(to.clone());

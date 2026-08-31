@@ -1,5 +1,19 @@
 #![no_std]
 use soroban_sdk::{contract, contracterror, contractimpl, contracttype, token, Address, Env};
+//! ## Rounding policy
+//!
+//! Every swap computes its output amount with `checked_div`, which truncates
+//! toward zero (floors, for the non-negative amounts used here). That means
+//! a swap always pays out **at most** the exact real-number constant-product
+//! quote, never more — so any rounding error is retained by the pool rather
+//! than leaked to the trader. Combined with the 0.3% input fee (see
+//! `swap_a_for_b` / `swap_b_for_a`), this guarantees the invariant
+//! `reserve_a * reserve_b` never decreases across a swap. See
+//! `test_invariant_never_decreases_across_swaps` below for a property test
+//! that exercises this over many pseudo-random swap sequences.
+use soroban_sdk::{
+    contract, contracterror, contractimpl, contracttype, token, Address, Env,
+};
 
 #[contracttype]
 #[derive(Clone, Debug)]
@@ -662,5 +676,73 @@ mod tests {
             .add_liquidity(&setup.alice, &100_000, &200_000, &90_000, &180_000);
         let result = setup.client.try_swap_a_for_b(&setup.bob, &0, &0);
         assert_eq!(result, Err(Ok(Error::InvalidAmount)));
+    }
+
+    // ── invariant property test ──────────────────────────────────────────────
+
+    /// A tiny deterministic PRNG (xorshift64*) so the swap sequence below is
+    /// reproducible on every run and platform without pulling in an external
+    /// fuzz-testing dependency.
+    struct Rng(u64);
+
+    impl Rng {
+        fn next_u64(&mut self) -> u64 {
+            let mut x = self.0;
+            x ^= x << 13;
+            x ^= x >> 7;
+            x ^= x << 17;
+            self.0 = x;
+            x
+        }
+
+        /// Random value in `1..=max` (inclusive), `max` must be >= 1.
+        fn next_range(&mut self, max: i128) -> i128 {
+            1 + (self.next_u64() % (max as u64)) as i128
+        }
+
+        fn next_bool(&mut self) -> bool {
+            self.next_u64() % 2 == 0
+        }
+    }
+
+    /// Property test: for any sequence of swaps in either direction, the
+    /// constant-product invariant `reserve_a * reserve_b` must never
+    /// decrease (see the "Rounding policy" note at the top of this file).
+    /// A bug that mixed up which reserve gets credited/debited, or that
+    /// rounded in the trader's favor instead of the pool's, would show up
+    /// here as a decreasing `k` on some random swap — which a handful of
+    /// hand-written example-based tests could easily miss.
+    #[test]
+    fn test_invariant_never_decreases_across_swaps() {
+        let setup = setup();
+        setup
+            .client
+            .add_liquidity(&setup.alice, &1_000_000, &1_000_000, &0, &0);
+
+        let mut rng = Rng(0x2545_F491_4F6C_DD1D);
+        let reserves = setup.client.get_reserves();
+        let mut prev_k = reserves.reserve_a * reserves.reserve_b;
+
+        for i in 0..200 {
+            let reserves = setup.client.get_reserves();
+            // Keep each swap small relative to the current reserves so 200
+            // iterations don't drain either side of the pool to zero.
+            let max_in = (reserves.reserve_a.min(reserves.reserve_b) / 20).max(1);
+            let amount = rng.next_range(max_in);
+
+            if rng.next_bool() {
+                setup.client.swap_a_for_b(&setup.bob, &amount, &0);
+            } else {
+                setup.client.swap_b_for_a(&setup.bob, &amount, &0);
+            }
+
+            let reserves = setup.client.get_reserves();
+            let k = reserves.reserve_a * reserves.reserve_b;
+            assert!(
+                k >= prev_k,
+                "invariant decreased on swap #{i}: prev_k={prev_k}, k={k}, reserves={reserves:?}"
+            );
+            prev_k = k;
+        }
     }
 }
