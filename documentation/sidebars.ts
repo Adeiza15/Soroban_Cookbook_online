@@ -84,6 +84,7 @@ const sidebars: SidebarsConfig = {
         'patterns/streaming-payments',
         'patterns/token-vesting',
         'patterns/contract-registry',
+        'patterns/multisig-wallet',
       ],
     },
     {
