@@ -41,7 +41,9 @@ members = [
     "upgradeable",
     "multi-token-vault",
     "multisig-wallet",
+    "marketplace",
     "nft",
     "royalty-splitter",
 ]
+resolver = "2"
 resolver = "2"
