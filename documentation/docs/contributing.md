@@ -269,3 +269,4 @@ If you're stuck, feel free to:
 - [Internal Linking Strategy](/docs/contributing/internal-linking) — how we structure cross-links for SEO and navigation
 - [Adding a Tested Code Example](/docs/contributing/add-tested-example) — contribute verified examples
 - [Pattern Library](/docs/patterns/overview) — where new patterns are catalogued
+- [Reviewing Test Snapshots](/docs/contributing/test-snapshots) — how to review and manage snapshot updates
