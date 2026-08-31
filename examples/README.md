@@ -33,6 +33,7 @@ Contracts build to the shared workspace target directory,
 | [`counter`](counter/README.md) | Counter | [Storage](https://soroban-cookbook.dev/docs/concepts/storage) |
 | [`cross-contract`](cross-contract/README.md) | Cross-Contract Invocation Example | — |
 | [`emergency-stop`](emergency-stop/README.md) | Emergency Stop (Circuit Breaker) | [Lifecycle and Upgrades](https://soroban-cookbook.dev/docs/patterns/lifecycle-upgrades) |
+| [`events-catalog`](events-catalog/README.md) | Event Catalog for Indexers | [Events](https://soroban-cookbook.dev/docs/concepts/events) |
 | [`error-handling`](error-handling/README.md) | Error Handling | [Error Handling Pattern](https://soroban-cookbook.dev/docs/patterns/error-handling) |
 | [`escrow-basic`](escrow-basic/README.md) | Basic Escrow | [Basic Escrow Pattern](https://soroban-cookbook.dev/docs/patterns/escrow-basic) |
 | [`escrow-multiparty`](escrow-multiparty/README.md) | Multi-Party Escrow | [Multi-Party Escrow Pattern](https://soroban-cookbook.dev/docs/patterns/escrow-multiparty) |
@@ -43,6 +44,7 @@ Contracts build to the shared workspace target directory,
 | [`multisig-wallet`](multisig-wallet/README.md) | Multisig Wallet | [Authorization](https://soroban-cookbook.dev/docs/concepts/authorization) |
 | [`oracle-consumer`](oracle-consumer/README.md) | Oracle Consumer | [Oracle Consumer Pattern](https://soroban-cookbook.dev/docs/patterns/oracle-consumer) |
 | [`reentrancy-guard`](reentrancy-guard/README.md) | Reentrancy Guard | [Reentrancy Guard Pattern](https://soroban-cookbook.dev/docs/patterns/reentrancy-guard) |
+| [`refundable-deposit`](refundable-deposit/README.md) | Refundable Deposit | [Authorization Patterns](https://soroban-cookbook.dev/docs/patterns/authorization) |
 | [`simple-dao`](simple-dao/README.md) | Simple DAO | [Proposal Lifecycle](https://soroban-cookbook.dev/docs/patterns/proposal-lifecycle) |
 | [`simple-voting`](simple-voting/README.md) | Simple Voting | [Proposal Lifecycle](https://soroban-cookbook.dev/docs/patterns/proposal-lifecycle) |
 | [`staking`](staking/README.md) | Staking with Epoch Rewards | [Staking Pattern](https://soroban-cookbook.dev/docs/patterns/staking) |
